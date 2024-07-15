@@ -52,38 +52,10 @@ document.body.addEventListener("keydown", function (x) {
 
 function MakeButtonPressed(keyval) {
   keyval.classList.add("pressed");
+  var c = keyval.style.color;
   keyval.style.color = "white";
   setTimeout(function(){
-    keyval.classList.remove("pressed","white");
-  },100);
+    keyval.classList.remove("pressed");
+    keyval.style.color = c;
+  },300);
 }
-
-/*
-function Hero(name,power,flight,){
-    this.name = name;
-    this.power = power;
-    this.flight = flight;
-    this.details = console.log(this.power * this.flight);
-    this.changeValue
-VM8464:6 Uncaught SyntaxError: Unexpected end of inputUnderstand this error
-function Hero(name,power,flight,){
-    this.name = name;
-    this.power = power;
-    this.flight = flight;
-    this.details = function(){console.log(this.power * this.flight);}
-    this.print = function(){alert("name :"+this.name+"\npower: "+power);}
-}
-undefined
-var vivek = new Hero("vivek",98,true);
-undefined
-vivek.details();
-VM9024:5 98
-undefined
-vivek.flight = false;
-false
-vivek.details();
-VM9024:5 0
-undefined
-vivek.print();
-undefined
-*/
